@@ -1,0 +1,9 @@
+- importo o CSV (a princípio com apenas 1 coluna)
+- defino o LSE
+- defino o LIE
+- calculo a média dos dados
+- calculo o desvio padrão dos dados
+- calculo CP (      (LSE-LIE) / 6 * DesvPad     )
+- calculo valor1 (      (LSE - media) / 3 * DesvPad     )
+- calculo valor2 (      (media - LIE) / 3 * DesvPad     )
+- determino CPK (menor valor entre valor1 e valor2)
