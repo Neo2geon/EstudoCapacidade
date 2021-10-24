@@ -10,5 +10,6 @@ arquivoTemporario = open('apagar.csv', 'w', encoding='utf-8')
 arquivoTemporario.write(textoTransformado)
 arquivoTemporario.close()
 
+
 df = pd.read_csv('apagar.csv', delimiter=';', index_col=0)
 print(df.head())
