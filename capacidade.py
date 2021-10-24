@@ -1,8 +1,14 @@
 from unittest.mock import inplace
-
 import pandas as pd
+import csv
 
-df = pd.read_csv('DadosCSV.csv', delimiter=';', index_col=0)
-df.replace([','], '.', inplace=True)
+
+arquivo = open('DadosCSV.csv', 'r')
+textoArquivo = arquivo.read()
+textoTransformado = textoArquivo.replace(',', '.')
+arquivoTemporario = open('apagar.csv', 'w', encoding='utf-8')
+arquivoTemporario.write(textoTransformado)
+arquivoTemporario.close()
+
+df = pd.read_csv('apagar.csv', delimiter=';', index_col=0)
 print(df.head())
-#media = df['Position A5'].mean()
