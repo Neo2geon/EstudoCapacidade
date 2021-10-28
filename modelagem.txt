@@ -4,6 +4,7 @@
 - calculo a média dos dados - ok
 - calculo o desvio padrão amostral dos dados - ok
 - calculo CP (      (LSE-LIE) / 6 * DesvPad     ) - ok
-- calculo valor1 (      (LSE - media) / 3 * DesvPad     )
-- calculo valor2 (      (media - LIE) / 3 * DesvPad     )
-- determino CPK (menor valor entre valor1 e valor2)
+
+- calculo valor1 (      (LSE - media) / 3 * DesvPad     ) - ok
+- calculo valor2 (      (media - LIE) / 3 * DesvPad     ) - ok
+**- determino CPK (menor valor entre valor1 e valor2)

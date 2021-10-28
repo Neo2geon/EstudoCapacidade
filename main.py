@@ -8,13 +8,15 @@ replaceCSV(arquivo_de_dados, ',', '.')
 df = pd.read_csv(arquivo_de_dados, delimiter=';', index_col=0)
 #print(df.head())
 
-LSE = 30
-LIE = 10
+LSE = 1.4
+LIE = 1.2
 
-objCapacidade = EstudoCapacidade(LSE, LIE, 'Position B1', df.iloc[:, 1].tolist())
+colunaDoDf = 'Position A5'
+
+listaDeDados =  df[colunaDoDf].tolist()
+objCapacidade = EstudoCapacidade(LSE, LIE, colunaDoDf, listaDeDados)
 
 print("Média: " + str(objCapacidade.media()))
 print("Desvio Padrão: " + str(objCapacidade.desviopadrao()))
 print("Índice CP: " + str(objCapacidade.indiceCP()))
-
-
+print("CPK: " + str(objCapacidade.cpk()))

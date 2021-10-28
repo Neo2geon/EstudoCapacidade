@@ -15,3 +15,12 @@ class EstudoCapacidade:
 
     def indiceCP(self):
         return (self.lse - self.lie) / (6 * self.desviopadrao())
+
+    def valor1(self):
+        return (self.lse - self.media()) / (3 * self.desviopadrao())
+
+    def valor2(self):
+        return (self.media() - self.lie) / (3 * self.desviopadrao())
+
+    def cpk(self):
+        return min(self.valor1(), self.valor2())
