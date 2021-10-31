@@ -10,7 +10,7 @@ AINDA EM DESENVOLVIMENTO
         <td>Peça nº</td>
         <td>Dimensão 1</td>
         <td>Dimensão 2</td>
-        <td>Dimensão n</td>
+        <td>Dimensão n...</td>
     </tr>
     <tr>
         <td>1</td>
