@@ -31,8 +31,10 @@ class EstudoCapacidade:
         texto_final += '\n'
         texto_final += '***********************              ' + self.label_dados + '               ***********************'
         texto_final += '\n\nDados:'
+        index_peca = 1
         for a in self.matriz_dados:
-            texto_final += '\n' + str(a)
+            texto_final += '\n' + 'Peça ' + str(index_peca) + " = " + str(a)
+            index_peca += 1
         texto_final += '\n\n\nEstatísticas:'
         texto_final += '\n - Média: ' + str(self.media())
         texto_final += '\n - Desvio Padrão: ' + str(self.desviopadrao())
@@ -41,6 +43,6 @@ class EstudoCapacidade:
         return texto_final
 
     def grava_arquivo_relatorio_final(self, texto_final: str):
-        nome_arquivo = 'relatorio ' + str(datetime.now().strftime('%d_%m_%Y %H_%M_%S')) + '.txt'
+        nome_arquivo = './Os relatórios gerados estao aqui/relatorio ' + self.label_dados + " - " + str(datetime.now().strftime('%d_%m_%Y %H_%M_%S')) + '.txt'
         with open(nome_arquivo, 'w') as arquivo:
             arquivo.write(texto_final)
