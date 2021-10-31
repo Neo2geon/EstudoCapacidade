@@ -3,7 +3,7 @@ AINDA EM DESENVOLVIMENTO
 <br><br>Cálculo de CP e CPK a partir de uma base de dados CSV
 <br>A partir de um arquivo CSV contendo dados, é realizado um Estudo de Capacidade do Processo (CP e CPK).
 
-##Premissas
+## Premissas
 1. Os dados devem estar em um arquivo CSV, tendo a seguinte estrutura:
 <table border="1">
     <tr>
@@ -43,7 +43,7 @@ países anglófonos: 3.14159);
  gerados  
  
 
-##Fluxo de funcionamento
+## Fluxo de funcionamento
 1. Substitui as vírgulas do arquivo CSV por pontos (ATENÇÃO: nesse processo os dados são sobrescritos, mas tenho certeza
  de que não preciso lembrar-lhe de manter uma cópia dos dados são e salva em outro lugar, certo?);
 2. Importa os dados transformando-o em um dataframe com o PANDAS;
@@ -55,16 +55,16 @@ países anglófonos: 3.14159);
    3. Grava os resultados num arquivo txt na pasta "Os relatórios gerados estao aqui";
 
 
-##Saídas
+## Saídas
 Para cada coluna de dados do arquivo CSV (desprezando a primeira coluna que é o número da peça) será gerado um arquivo
 TXT contendo os dados utilizados nos cálculos e os resultados dos cálculos efetuados.
 
 
-##Observações que valem a pena serem lidas
+## Observações que valem a pena serem lidas
 1. O <b>desvio padrão</b> utilizado é o STDEV da biblioteca STATISTICS do python. Dependendo do tipo da sua amostra isso
 fará diferença
 
 
-##Próximos passos
+## Próximos passos
 1. incorporar o cálculo de desvio padrão através da média móvel
 2. Gráfico de histograma dos dados do estudo
