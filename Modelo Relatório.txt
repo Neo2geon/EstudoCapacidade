@@ -1,0 +1,11 @@
+***********************          ESTUDO DE CAPACIDADE          ***********************
+***********************              Position A5               ***********************
+
+Dados:
+
+
+Estatísticas:
+ - Média:
+ - Desvio Padrão:
+ - Índice CP:
+ - CPK:
