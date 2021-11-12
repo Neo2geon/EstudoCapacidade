@@ -1,5 +1,7 @@
 import statistics
 from datetime import datetime
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 class EstudoCapacidade:
     def __init__(self, lse: float, lie: float, label_dados: str, matriz_dados: 'lista de dados'):
@@ -7,6 +9,7 @@ class EstudoCapacidade:
         self.lie = lie
         self.label_dados = label_dados
         self.matriz_dados = matriz_dados
+        self.timestamp = str(datetime.now().strftime('%d_%m_%Y %H_%M_%S'))
 
     def media(self):
         return statistics.mean(self.matriz_dados)
@@ -43,6 +46,17 @@ class EstudoCapacidade:
         return texto_final
 
     def grava_arquivo_relatorio_final(self, texto_final: str):
-        nome_arquivo = './Os relatórios gerados estao aqui/relatorio ' + self.label_dados + " - " + str(datetime.now().strftime('%d_%m_%Y %H_%M_%S')) + '.txt'
+        nome_arquivo = './Os relatórios gerados estao aqui/relatorio ' + self.label_dados + " - " + str(self.timestamp) + '.txt'
         with open(nome_arquivo, 'w') as arquivo:
             arquivo.write(texto_final)
+
+    def gera_histograma(self):
+        plt.subplots()
+        grafico = sns.histplot(self.matriz_dados, kde=True)
+        plt.axvline(self.lie, 0, max(self.matriz_dados), color = 'green')
+        plt.axvline(self.lse, 0, max(self.matriz_dados), color = 'green')
+        plt.title(self.label_dados)
+
+    def salva_histograma(self):
+        nome_arquivo = './Graficos/' + self.label_dados + " - " + str(self.timestamp) + '.png'
+        plt.savefig(nome_arquivo)
