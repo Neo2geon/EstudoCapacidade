@@ -9,10 +9,8 @@ df = pd.read_csv(arquivo_de_dados, delimiter=';', index_col=0)
 
 teste = True
 while teste:
-    LSE = 1.25
-    LIE = 1
-    #LSE = float(input('\nInsira o Limite Superior de Especificação: '))
-    #LIE = float(input('Insira o Limite Inferior de Especificação: '))
+    LSE = float(input('\nInsira o Limite Superior de Especificação: '))
+    LIE = float(input('Insira o Limite Inferior de Especificação: '))
     if LSE<=LIE:
         print("\nO LSE não pode ser menor que o LIE.")
     else:
